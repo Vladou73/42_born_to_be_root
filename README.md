@@ -72,12 +72,28 @@ It's a convention so the *nix shell knows what kind of interpreter to run.
 
 ### list of commands used
 - uname - Afficher des informations sur le système.  --all : afficher toutes les informations
-- grep -c : flag -c Suppress normal output; instead print a count of matching lines for each input file
+- grep : search input file and select lines that match one or more patterns. flag -c Suppress normal output; instead print a count of matching lines for each input file
 - echo
 	- n : suppress automatic newline appended at the end
 	- e : enable interpretation of backslash escapes
 - free : Display amount of free and used memory in the system. flag -m : display in megabytes
 - awk : appliquer plusieurs actions a un fichier de la forme : motif {action}. syntaxe inspiree du C. on manipule des enregistrements (chaine de caractères séparée par un retour chariot, generalement une ligne) et des champs (chaine de caractères separée par un espace)
 	- Sur l'enregistrement courant, chaque champ = $1, $2 ... $NF
-	- NR==2 : 2eme enregistrement
+	- NR==2 : 2eme enregistrement (on cherche l'enregistrement ou la ligne = 2)
+	- NF=="/" : on cherche le dernier champ (derniere colonne) qui est egale a "/"
 - printf : comme en C, specification formatage puis variables : precisions string, nombre de decimales (.2), %% pour afficher un '%', floating number (f)
+- df : display free disk space. -h flag : to use unit suffixes and more readable output
+- top : display and update sorted information about processes
+	-  flags : -n : Non-event mode, calculates CPU usage since the previous sample.
+- who : display who is logged in. -b flag : Time of last system boot.
+- if ... then... else ... fi (=final)
+- wc -- word, line, character, and byte count. -l : count number of lines, written in standard output
+- tr - Convertir ou éliminer des caractères (conversion d'un caractere en un autre)
+- w -- display who is logged in and what they are doing
+- hostname : show system's host name. flag -I : shows all ip addresses
+- ip link show : https://linuxize.com/post/linux-ip-command/
+
+### list of files called
+- /var/log/sudo/logfile : log all sudo commands made
+- Inspect /proc/net/sockstat and /proc/net/sockstat6 to get established connections (inuse)
+- address Media Access Control (mac : https://fr.wikipedia.org/wiki/Contr%C3%B4le_d%27acc%C3%A8s_au_support)
