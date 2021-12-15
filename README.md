@@ -68,10 +68,16 @@ what means sudo and tty : https://www.shell-tips.com/linux/sudo-sorry-you-must-h
 #!/bin/bash : https://stackoverflow.com/questions/8967902/why-do-you-need-to-put-bin-bash-at-the-beginning-of-a-script-file
 It's a convention so the *nix shell knows what kind of interpreter to run.
 
-### echo
-- n : suppress automatic newline appended at the end
-- e : enable interpretation of backslash escapes
 
-### used
+
+### list of commands used
 - uname - Afficher des informations sur le système.  --all : afficher toutes les informations
 - grep -c : flag -c Suppress normal output; instead print a count of matching lines for each input file
+- echo
+	- n : suppress automatic newline appended at the end
+	- e : enable interpretation of backslash escapes
+- free : Display amount of free and used memory in the system. flag -m : display in megabytes
+- awk : appliquer plusieurs actions a un fichier de la forme : motif {action}. syntaxe inspiree du C. on manipule des enregistrements (chaine de caractères séparée par un retour chariot, generalement une ligne) et des champs (chaine de caractères separée par un espace)
+	- Sur l'enregistrement courant, chaque champ = $1, $2 ... $NF
+	- NR==2 : 2eme enregistrement
+- printf : comme en C, specification formatage puis variables : precisions string, nombre de decimales (.2), %% pour afficher un '%', floating number (f)
