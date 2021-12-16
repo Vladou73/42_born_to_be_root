@@ -12,3 +12,4 @@ echo -n -e "#Connexions TCP : "; cat /proc/net/sockstat{,6} | awk '$1 == "TCP:" 
 echo -n -e "#User log : "; w | wc -l | awk '{print$1-2}'
 echo -n -e "#Network : IP " | tr '\n' ' ' && hostname -I | tr '\n' ' ' && echo -n "(" && ip link show | awk '$1=="link/ether" {print $2}'| tr '\n' ')' && printf "\n"
 echo -n -e "#Sudo : "; cat /var/log/sudo/logfile | wc -l | tr '\n' ' ' && echo "cmd"
+printf "\n"
